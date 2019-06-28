@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crystal Collector</title>
+    
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+    </script>
+    
+    <script src="assets/javascript/game.js"></script>
+  
+   
+</head>
+<body>
+
+    <div id = "image-background">
+   
+        <!--Overall Bootrap Grid-->
+        <div class="container">
+      
+            <div class="jumbotron">
+                <h1 class="text-center jumbotron-header"><strong>Crystals Collector!</strong></h1>
+            </div>
+
+     
+     
+                <!--Define the layout. Row and column-->
+        <div class="row">
+            <div class="col-lg-2">
+
+                <!--Wins & Losses-->
+                <div class="card text-center">
+                    <h5 class="card-header" id="wins">Wins</h5>
+                        <div class="card-body">
+                            <h5 class="card-title" id="win">0</h5>
+                        </div>
+                </div>
+
+                <div class="card text-center">
+                    <h5 class="card-header" id="losses">Losses</h5>
+                        <div class="card-body">
+                            <h5 class="card-title" id="loss">0</h5>
+                        </div>
+                </div>
+
+          <!--Total Score-->
+          <div class="card text-center">
+                <h5 class="card-header" id="score">Total Score is:</h5>
+                    <div class="card-body">
+                        <h5 class="card-title" id="total-score">0</h5>
+                    </div>
+         </div>
+    </div>
+           
+    
+    <!--Generated Random number-->
+         <div class="col-lg-10">
+            <div class="card text-center">
+                <h5 class="card-header" id="random-number">Random Number</h5>
+                    <div class="card-body">
+                        <h5 class="card-title number">0</h5>
+                    </div>
+            </div>
+
+                <div class="randomGenerator">
+                              <button class="red-crystal" rand="20"><img src="assets/images/red-crystal.jpg" class="crystal" alt="red-crystal"></button>
+                              <button class="blue-crystal" rand="20"><img src="assets/images/blue-crystal.jpg" class="crystal" alt="blue-crystal"></button>
+                              <button class="gold-crystal" rand="20"><img src="assets/images/gold-crystal.jpg" class="crystal" alt="gold-crystal"></button>
+                              <button class="green-crystal" rand=20><img src="assets/images/green-crystal.jpg" class="crystal" alt="green-crystal"></button>     
+                </div>
+
+          </div>
+
+        </div>
+
+     </div>    
+  </div>
+      
+</body>
+</html>
