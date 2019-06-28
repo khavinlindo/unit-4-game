@@ -11,7 +11,7 @@ var goldCrystal;
 var greenCrystal;
 
 var totalScore = 0;
-
+var alert;
 
 function generateRandomNumber() {
     randomNumber = 19 + Math.floor((Math.random() * 101) + 1);
@@ -32,6 +32,35 @@ $(".green-crystal").attr("rand", ""+greenCrystal);
 
 }
 
+function reset () {
+        totalScore=0;
+        $("#total-score").html(totalScore)
+        generateRandomNumber();
+        randomizeCrystals();
+}
+
+function winAlert() {
+    alert= $("<div>");
+    alert.addClass("alert alert-success text-center");
+    alert.attr("role", "alert");
+    alert.html("You Won!!");
+    $(".col-lg-10").append(alert);
+
+    setTimeout(function() {alert.remove();}, 3000);
+    
+}
+
+function loseAlert() {
+    alert= $("<div>");
+    alert.addClass("alert alert-danger text-center");
+    alert.attr("role", "alert");
+    alert.html("You lost");
+    $(".col-lg-10").append(alert);
+
+    setTimeout(function() {alert.remove();}, 3000);
+
+}
+
 
 $(document).ready(function() {
 
@@ -39,6 +68,7 @@ $(document).ready(function() {
     randomizeCrystals();
    
     var crystalNumber;
+
     $("button").on("click", function() {
         crystalNumber = parseInt($(this).attr("rand"));
 
@@ -48,23 +78,21 @@ $(document).ready(function() {
         if (totalScore === randomNumber) {
         wins++;
         $("#win").html(wins);
+   
+        winAlert();
         
         /*Reset after win*/
-        totalScore=0;
-        $("#total-score").html(totalScore);
-        generateRandomNumber();
-        randomizeCrystals();
+        reset();
     }
 
     if (totalScore > randomNumber) {
         losses++
         $("#loss").html(losses);
         
+        loseAlert();
+        
         /*Reset after loss*/
-        totalScore=0;
-        $("#total-score").html(totalScore)
-        generateRandomNumber();
-        randomizeCrystals();
+        reset();
     }
 })
 
